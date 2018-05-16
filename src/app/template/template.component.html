@@ -21,8 +21,8 @@
           <input matInput placeholder="Monto Promesa" value="500">
       </mat-form-field>
       <mat-card-actions>
-          <button color="{{ button.color }}" disabled="{{ button.disabled }}" mat-button mat-raised-button>
-            {{ button.text }}
+          <button color="{{ button.color }}" disabled="{{ button.disabled }}"  (click)="login()" mat-raised-button color="primary">
+            {{ button.text }}&nbsp;<fa name="paper-plane" ></fa> 
           </button>
       </mat-card-actions>
   </form>

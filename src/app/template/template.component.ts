@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { log } from 'util';
-
+import { Router } from '@angular/router';
 
 class Button {
   text: string;
@@ -25,9 +25,15 @@ export class TemplateComponent implements OnInit {
   date = new Date();
     
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit() {
+  }
+
+  login() : void {
+     this.router.navigate(["result"]);
+
+    
   }
 
 }

@@ -21,11 +21,15 @@ import { FormsModule } from '@angular/forms';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { TemplateComponent } from './template/template.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { NotificationComponent } from './notification/notification.component';
+
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TemplateComponent
+    TemplateComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,8 @@ import { AppRoutingModule } from './/app-routing.module';
     FormsModule,
     BrowserAnimationsModule,
     AngularFontAwesomeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FlexLayoutModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
