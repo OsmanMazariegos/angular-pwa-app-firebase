@@ -1,0 +1,29 @@
+<mat-card>
+  <form class="example-form">
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="Nombre completo" value="Osman Otoniel Mazariegos Mendez">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="DPI" value="1631380241010">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="Pagare" value="10005026">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+          <input [readonly]="true" matInput [matDatepicker]="picker" placeholder="Fecha de pago" [(ngModel)]="date" name="date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="Monto Promesa" value="500">
+      </mat-form-field>
+      <mat-card-actions>
+          <button color="{{ button.color }}" disabled="{{ button.disabled }}" mat-button mat-raised-button>
+            {{ button.text }}
+          </button>
+      </mat-card-actions>
+  </form>
+</mat-card>
