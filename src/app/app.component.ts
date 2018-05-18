@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Customer } from './models/customer';
+
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +10,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'App Firebase PWA';
+
+
+  constructor(public httpClient: HttpClient) {}
   
 }

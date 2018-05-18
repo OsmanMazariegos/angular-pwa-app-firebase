@@ -1,29 +1,39 @@
 <mat-card>
-  <form class="example-form">
-      <mat-form-field class="example-full-width">
-          <input matInput placeholder="Nombre completo" value="Osman Otoniel Mazariegos Mendez">
-      </mat-form-field>
+  <form  (ngSubmit)="submit" #formControl="ngForm" >
 
       <mat-form-field class="example-full-width">
-          <input matInput placeholder="DPI" value="1631380241010">
-      </mat-form-field>
+          <input matInput #input placeholder="Nombre completo" [(ngModel)]="customer.full_name" name="full_name" required>
+          <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
 
       <mat-form-field class="example-full-width">
-          <input matInput placeholder="Pagare" value="10005026">
-      </mat-form-field>
+          <input matInput #input placeholder="DPI" [(ngModel)]="customer.u_id_tax" name="u_id_tax" required>
+          <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+
       <mat-form-field class="example-full-width">
-          <input [readonly]="true" matInput [matDatepicker]="picker" placeholder="Fecha de pago" [(ngModel)]="date" name="date">
+          <input matInput #input placeholder="Pagare" [(ngModel)]="customer.i_will_pay" name="i_will_pay" required>
+          <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+          <input [readonly]="true" matInput #input [matDatepicker]="picker" placeholder="Fecha de pago" [(ngModel)]="customer.pay_day" name="pay_day" required>
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-          <input matInput placeholder="Monto Promesa" value="500">
-      </mat-form-field>
+          <input matInput #input placeholder="Monto" [(ngModel)]="customer.pledge_amount" name="pledge_amount" required>
+          <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
       <mat-card-actions>
-          <button color="{{ button.color }}" disabled="{{ button.disabled }}"  (click)="login()" mat-raised-button color="primary">
+       
+                <button  mat-raised-button color="primary" [type]="submit"
+                 [disabled]="!formControl.valid"  (click)="confirmAdd()">
             {{ button.text }}&nbsp;<fa name="paper-plane" ></fa> 
           </button>
       </mat-card-actions>
   </form>
 </mat-card>
+<simple-notifications [options]="options"></simple-notifications>

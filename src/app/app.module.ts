@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; //Import notificactions
 
-import { HttpModule } from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 
 import { 
   MatToolbarModule,
@@ -17,13 +16,16 @@ import {
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { TemplateComponent } from './template/template.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { NotificationComponent } from './notification/notification.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { DataService } from './services/data.service'; 
 
-import {FlexLayoutModule} from '@angular/flex-layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SimpleNotificationsModule } from 'angular2-notifications';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,12 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     BrowserAnimationsModule,
     AngularFontAwesomeModule,
     AppRoutingModule,
-    FlexLayoutModule    
+    FlexLayoutModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    
+    SimpleNotificationsModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
